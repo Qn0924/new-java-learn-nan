@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Aray {
     public static void main(String[] args) {
         int arr[]={73,80,62,93,96,87};
@@ -14,5 +16,6 @@ public class Aray {
         for (int i = 0; i < arr.length; i++) {
             System.out.println(arr[i]);
         }
+        System.out.println(Arrays.toString(arr));
     }
 }

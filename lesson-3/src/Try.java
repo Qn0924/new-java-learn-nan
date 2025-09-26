@@ -1,4 +1,4 @@
-public class Arrays {
+public class Try {
         public static void main(String[] args) {
             int arr[]={73,80,62,93,96,87};
             int max=arr[0];
