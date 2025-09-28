@@ -10,4 +10,7 @@ public class User {
         this.name=name;
         this.age=age;
     }
+    public int num(){
+        return 1;
+    }
 }
