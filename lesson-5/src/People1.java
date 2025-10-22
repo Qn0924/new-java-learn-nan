@@ -4,6 +4,12 @@ public class People1 {
     private String gender;
 
     public People1() {
+        System.out.println("People1 constructor");
+    }
+
+    public People1(int age) {
+        System.out.println("People1 constructor ter");
+        this.age = age;
     }
 
     public People1(int age, String name, String gender) {
