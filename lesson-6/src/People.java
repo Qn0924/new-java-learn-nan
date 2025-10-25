@@ -1,9 +1,7 @@
 public class People {
     private int id=3;
 
-    public People() {
-        System.out.println("编号是"+id);
-    }
+
 
     public void setId(int id) {
         this.id = id;
@@ -12,6 +10,7 @@ public class People {
         return id;
     }
     public void show(){
-        System.out.println("编号是"+id);
+        //System.out.println("编号是"+id);
+        System.out.println("输出人员信息");
     }
 }
