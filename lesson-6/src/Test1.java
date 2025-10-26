@@ -4,8 +4,9 @@ public class Test1 {
         SuperMember superMember = new SuperMember();
         VipMember vipMember = new VipMember();
         Cashier cashier = new Cashier();
-        cashier.setMember(superMember);
-        cashier.settlement();
+        cashier.settlement(ordinaryMember);
+        cashier.settlement(superMember);
+        cashier.settlement(vipMember);
 
     }
 }
