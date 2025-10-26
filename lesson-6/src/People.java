@@ -9,7 +9,7 @@ public class People {
     public int getId() {
         return id;
     }
-    public void show(){
+    void show(){
         //System.out.println("编号是"+id);
         System.out.println("输出人员信息");
     }
