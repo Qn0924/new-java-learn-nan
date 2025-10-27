@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class People {
     private String name;
     private int id;
@@ -25,6 +27,10 @@ public class People {
         people.setName("张三");
         people.setId(1);
         System.out.println(people.toString());
+        People people1 = new People();
+        people1.setName("张三");
+        people1.setId(1);
+        System.out.println(people.equals(people1));
     }
 
     @Override
@@ -33,5 +39,17 @@ public class People {
                 "name='" + name + '\'' +
                 ", id=" + id +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        if (object == null || getClass() != object.getClass()) return false;
+        People people = (People) object;
+        return id == people.id && Objects.equals(name, people.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, id);
     }
 }
