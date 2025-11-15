@@ -1,4 +1,4 @@
-public class MyThread extends Thread{
+public class MyThread implements Runnable{
     @Override
     public void run() {
         for (int i = 0; i < 100; i++) {
