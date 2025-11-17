@@ -1,7 +1,7 @@
 public class Account implements Runnable{
     private static int num;
     @Override
-    public void run() {
+    public synchronized void run() {
         try {
             Thread.sleep(1);
         } catch (InterruptedException e) {
