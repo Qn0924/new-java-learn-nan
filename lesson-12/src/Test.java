@@ -7,6 +7,11 @@ public class Test {
         runnable2.num=2;
         Thread thread2=new Thread(runnable2,"李四");
         thread1.start();
+        try {
+            Thread.sleep(200);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         thread2.start();
     }
 }
