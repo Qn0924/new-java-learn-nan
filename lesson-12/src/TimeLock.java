@@ -6,7 +6,7 @@ public class TimeLock implements Runnable{
     @Override
     public void run() {
         try {
-            if(reentrantLock.tryLock(6, TimeUnit.SECONDS)){
+            if(reentrantLock.tryLock(3, TimeUnit.SECONDS)){
                 System.out.println(Thread.currentThread().getName() + "get lock");
                 Thread.sleep(5000);
             }else{
@@ -15,7 +15,9 @@ public class TimeLock implements Runnable{
         } catch (InterruptedException e) {
             e.printStackTrace();
         }finally {
-            reentrantLock.unlock();
+            if (reentrantLock.isHeldByCurrentThread()) {
+                reentrantLock.unlock();
+            }
         }
     }
 }
