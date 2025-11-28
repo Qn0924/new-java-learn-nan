@@ -2,7 +2,7 @@ import java.util.Iterator;
 import java.util.Set;
 import java.util.TreeMap;
 
-public class Test {
+public class Test3 {
     public static void main(String[] args) {
         TreeMap treeMap=new TreeMap();
         treeMap.put(new User(3,"Java"),"Java");
