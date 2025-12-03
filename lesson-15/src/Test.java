@@ -9,7 +9,12 @@ public class Test {
             int num=(int)list.get(i);
             System.out.println(num+1);
         }
+        ArrayList<Integer> list2=new ArrayList();
+        list2.add(1);
+        //list2.add("Hello");
 
-
+        ArrayList<String> list3=new ArrayList();
+        //list3.add(1);
+        list3.add("Hello");
     }
 }
