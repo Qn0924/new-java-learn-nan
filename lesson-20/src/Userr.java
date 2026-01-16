@@ -1,6 +1,11 @@
 import java.io.Serializable;
 
 public class Userr extends People implements Serializable,Comparable ,MyInterface{
+    public int id;
+    private String name;
+    protected char gender;
+    double score;
+
     @Override
     public int compareTo(Object o) {
         return 0;
