@@ -7,7 +7,7 @@ public class User extends People implements Serializable,Comparable ,MyInterface
     }
 
     public User(){
-
+        System.out.println("调用了User无参构造函数");
     }
     public User(int id){
 
