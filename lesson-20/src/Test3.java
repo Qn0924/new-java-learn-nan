@@ -2,7 +2,7 @@ import java.lang.reflect.Constructor;
 
 public class Test3 {
     public static void main(String[] args) {
-        Class clazz=User.class;
+        Class clazz= Userr.class;
         //获取该类的共有构造函数
         Constructor[] constructors=clazz.getConstructors();
         for (Constructor constructor : constructors) {
