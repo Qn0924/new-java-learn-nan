@@ -1,9 +1,12 @@
 import java.lang.reflect.Constructor;
+import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
 public class Student {
-    private int id;
+    public int id;
     private String name;
+    protected char gender;
+    double score;
 
     public int getId() {
         return id;
@@ -45,5 +48,33 @@ public class Student {
         //4.调用showInfo方法展示数据
         Method showInfo = clazz.getMethod("showInfo", null);
         showInfo.invoke(o,null);
+        Field[] fields = clazz.getDeclaredFields();
+        for (Field field : fields) {
+            int modifiers=field.getModifiers();
+            Class<?> type = field.getType();
+            String name1 = field.getName();
+            String mo=getModifiers(modifiers);
+            System.out.println("属性："+name1+",访问权限修饰符："+mo+",数据类型："+type);
+        }
+
+    }
+
+    public static String getModifiers(int modifiers){
+        String result=null;
+        switch (modifiers){
+            case 0:
+                result="";
+                break;
+            case 1:
+                result="public";
+                break;
+            case 2:
+                result="private";
+                break;
+            case 4:
+                result="protected";
+                break;
+        }
+        return result;
     }
 }
