@@ -8,6 +8,13 @@ public class Student {
     protected char gender;
     double score;
 
+    public Student(){
+
+    }
+
+    public Student(int id){
+
+    }
     public int getId() {
         return id;
     }
