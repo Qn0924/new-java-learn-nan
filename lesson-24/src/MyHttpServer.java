@@ -7,7 +7,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 public class MyHttpServer {
-    public static String WebContent=System.getProperty("user.dir")+ File.separator+"WebContent";
+    public static String WebContent = System.getProperty("user.dir")+ File.separator + "WebContent";
     private int port=8080;
     private boolean isShutdown=false;
     public void receiving(){
