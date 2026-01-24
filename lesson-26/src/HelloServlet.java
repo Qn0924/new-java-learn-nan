@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 @WebServlet("/hello")
 public class HelloServlet extends HttpServlet {
@@ -20,11 +21,14 @@ public class HelloServlet extends HttpServlet {
 //        String requestPath=req.getServletPath();
 //        System.out.println("当前请求的资源名称是："+requestPath);
 //        Cookie[] cookies=req.getCookies();
-        String idStr = req.getParameter("id");
-        Integer id=Integer.parseInt(idStr);
-        System.out.println("请求参数id的值是："+id);
-        String name=req.getParameter("name");
-        System.out.println("请求参数name的值是："+name);
+//        String idStr = req.getParameter("id");
+//        Integer id=Integer.parseInt(idStr);
+//        System.out.println("请求参数id的值是："+id);
+//        String name=req.getParameter("name");
+//        System.out.println("请求参数name的值是："+name);
+          resp.setCharacterEncoding("UTF-8");
+          PrintWriter writer=resp.getWriter();
+          writer.write("你好");
     }
 
     @Override
