@@ -26,9 +26,21 @@ public class HelloServlet extends HttpServlet {
 //        System.out.println("请求参数id的值是："+id);
 //        String name=req.getParameter("name");
 //        System.out.println("请求参数name的值是："+name);
-          resp.setCharacterEncoding("UTF-8");
-          PrintWriter writer=resp.getWriter();
-          writer.write("你好");
+//          resp.setCharacterEncoding("UTF-8");
+//          PrintWriter writer=resp.getWriter();
+//          writer.write("你好");
+        String idStr = req.getParameter("id");
+        Integer key=null;
+        if (idStr != null) {
+            key = Integer.parseInt(idStr);
+        }else{
+            key=1;
+        }
+        String name = MyDB.get(key);
+        req.setAttribute("key",key);
+        req.setAttribute("name",name);
+        //跳转到JSP,转发
+        req.getRequestDispatcher("hello.jsp").forward(req,resp);
     }
 
     @Override
