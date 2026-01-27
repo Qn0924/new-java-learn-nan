@@ -36,9 +36,9 @@ public class HelloServlet extends HttpServlet {
         }else{
             key=1;
         }
-        String name = MyDB.get(key);
+        //String name = MyDB.get(key);
         req.setAttribute("key",key);
-        req.setAttribute("name",name);
+        //req.setAttribute("name",name);
         //跳转到JSP,转发
         req.getRequestDispatcher("hello.jsp").forward(req,resp);
     }
