@@ -3,6 +3,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.Iterator;
 import java.util.Set;
@@ -28,8 +29,9 @@ public class LogServlet extends HttpServlet {
             String password2=MyDB.get(username);
             if (password.equals(password2)) {
                 System.out.println("登录成功");
-                req.setAttribute("username", username);
-                req.getRequestDispatcher("welcome.jsp").forward(req, resp);
+                HttpSession session = req.getSession();
+                session.setAttribute("username", username);
+                resp.sendRedirect("welcome.jsp");
             } else {
                 System.out.println("登录失败");
                 req.setAttribute("error2","密码错误");
