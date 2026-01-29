@@ -1,4 +1,4 @@
-<%--
+<%@ page import="com.test.Account" %><%--
   Created by IntelliJ IDEA.
   User: 21289
   Date: 2026/1/27
@@ -13,9 +13,16 @@
 <body>
     <h1>数据页面</h1>
     <%
-      String username=(String) session.getAttribute("username");
-        if(username==null){
-            response.sendRedirect("log.jsp");
+        Account account=(Account) session.getAttribute("account");
+        String username="";
+        if(account==null){
+            response.sendRedirect("login.jsp");
+        }else{
+            username=account.getUsername();
+            String type=account.getType();
+            if(!(type.equals("user")||type.equals("admin"))){
+                response.sendRedirect("error.jsp");
+            }
         }
     %>
     <span>欢迎回来，<%=username%></span>

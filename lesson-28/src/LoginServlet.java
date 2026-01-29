@@ -1,3 +1,4 @@
+import com.test.Account;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,7 +16,7 @@ public class LoginServlet extends HttpServlet {
         Account account = LoginUtil.login(username, password);
         if (account.getCode() == 0) {
             HttpSession session = req.getSession();
-            session.setAttribute("username", account.getUsername());
+            session.setAttribute("account", account);
             resp.sendRedirect("welcome.jsp");
         }
         if (account.getCode() == -1) {

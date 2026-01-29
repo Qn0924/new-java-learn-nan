@@ -1,3 +1,5 @@
+import com.test.Account;
+
 import java.util.List;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -20,7 +22,7 @@ public class MyDB {
         Account account1=new Account();
         account1.setUsername("admin");
         account1.setPassword("123456");
-        account1.setType("asmin");
+        account1.setType("admin");
         account1.setCode(0);
         map.put("user","123456");
         accounts.add(account1);
